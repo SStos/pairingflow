@@ -1,0 +1,211 @@
+{
+  "id": "standardCloudPairing",
+  "version": "1.0",
+  "pages": [
+    {
+      "id": "#step1",
+      "type": "ContentPage",
+      "header": {
+        "contentType": "text",
+        "text": [
+          {
+            "lang": "en_US",
+            "text": "1. Step"
+          },
+          {
+            "lang": "de_DE",
+            "text": "1. Schritt"
+          }
+        ]
+      },
+      "body": {
+        "contentType": "markdown",
+        "text": [
+          {
+            "lang": "en_US",
+            "text": "Make sure your device is connected to the power source ![instr-sps-1](/icarus/files/static/product_illustrations/instr-sps-1)"
+          },
+          {
+            "lang": "de_DE",
+            "text": "Stell sicher, dass dein Gerät am Strom angeschlossen ist ![instr-sps-1](/icarus/files/static/product_illustrations/instr-sps-1)"
+          }
+        ]
+      },
+      "navigation": [
+        {
+          "type": "NEXT",
+          "pageRef": "step2",
+          "text": [
+            {
+              "lang": "en_US",
+              "text": "Next"
+            },
+            {
+              "lang": "de_DE",
+              "text": "Weiter"
+            }
+          ]
+        },
+        {
+          "type": "PREVIOUS",
+          "pageRef": "DEFAULT",
+          "text": [
+            {
+              "lang": "en_US",
+              "text": "Back"
+            },
+            {
+              "lang": "de_DE",
+              "text": "Zurück"
+            }
+          ]
+        }
+      ]
+    },
+
+    {
+      "id": "#step2",
+      "type": "ContentPage",
+      "header": {
+        "contentType": "text",
+        "text": [
+          {
+            "lang": "en_US",
+            "text": "2. Step"
+          },
+          {
+            "lang": "de_DE",
+            "text": "2. Schritt"
+          }
+        ]
+      },
+      "body": {
+        "contentType": "markdown",
+        "text": [
+          {
+            "lang": "en_US",
+            "text": "Please download the app from the Manufacturer in Apple App Store or Google Play Store. Follow the instruction in the app and connect your device with your Account. ![Pairing_download_illustration](/icarus/files/static/product_illustrations/Pairing_download_illustration)"
+          },
+          {
+            "lang": "de_DE",
+            "text": "Bitte lade dir die App des Herstellers im Apple App Store oder Google Play Store herunter. Folge den Schritten in der App und verbinde dein Gerät mit dieser. ![Pairing_download_illustration](/icarus/files/static/product_illustrations/Pairing_download_illustration)"
+          }
+        ]
+      },
+      "navigation": [
+        {
+          "type": "NEXT",
+          "pageRef": "CheckCloudConnectionStep",
+          "text": [
+            {
+              "lang": "en_US",
+              "text": "Next"
+            },
+            {
+              "lang": "de_DE",
+              "text": "Weiter"
+            }
+          ]
+        },
+        {
+          "type": "PREVIOUS",
+          "pageRef": "DEFAULT",
+          "text": [
+            {
+              "lang": "en_US",
+              "text": "Back"
+            },
+            {
+              "lang": "de_DE",
+              "text": "Zurück"
+            }
+          ]
+        }
+      ]
+    },
+
+    {
+      "id": "CheckCloudConnectionStep",
+      "type": "CheckCloudConnection",
+      "navigation": [
+        {
+          "type": "PREVIOUS",
+          "pageRef": "#step2",
+          "text": [
+            {
+              "lang": "en_US",
+              "text": "Back"
+            },
+            {
+              "lang": "de_DE",
+              "text": "Zurück"
+            }
+          ]
+        },
+        {
+          "type": "NEXT_AUTO",
+          "condition": "IF_CONNECTED",
+          "pageRef": "DISCOVERY"
+        },
+        {
+          "type": "NEXT_AUTO",
+          "condition": "IF_NOT_CONNECTED",
+          "pageRef": "#data_privacy"
+        }
+      ]
+    },
+
+    {
+      "id": "#data_privacy",
+      "type": "ContentPage",
+      "header": {
+        "contentType": "text",
+        "text": [
+          {
+            "lang": "en_US",
+            "text": "Connect Service"
+          },
+          {
+            "lang": "de_DE",
+            "text": "Service verbinden"
+          }
+        ]
+      },
+      "body": {
+        "contentType": "markdown",
+        "text": [
+          {
+            "lang": "en_US",
+            "text": "With the next step you need to enter your third party account credentials to link it with the system. ![Pairing_login_illustration](/icarus/files/static/product_illustrations/Pairing_login_illustration)"
+          },
+          {
+            "lang": "de_DE",
+            "text": "Im nächsten Schritt musst du deine third party Accountdaten eingeben, um deinen Account mit dem System zu verbinden. ![Pairing_login_illustration](/icarus/files/static/product_illustrations/Pairing_login_illustration)"
+          }
+        ]
+      },
+      "navigation": [
+        {
+          "type": "NEXT_AUTO",
+          "condition": "IF_CONNECTED",
+          "pageRef": "DISCOVERY"
+        },
+        {
+          "type": "NEXT",
+          "pageRef": "#data_privacy",
+          "text": [
+            {
+              "lang": "en_US",
+              "text": "Connect"
+            },
+            {
+              "lang": "de_DE",
+              "text": "Verbinden"
+            }
+          ]
+        }
+      ]
+    }
+
+  ]
+}
